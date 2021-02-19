@@ -20,7 +20,7 @@ class add_ckeditor_button {
 	 *
 	 * @return void
 	 */
-	function add_ckeditor_button()  {
+	function __construct()  {
 		// Set path to editor_plugin.js
 		//$siteurl = trailingslashit(get_option('siteurl'));
 		$this->path = CKEDITOR_PLUGIN_URL . 'plugins/nggallery/';

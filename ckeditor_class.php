@@ -15,7 +15,7 @@ class ckeditor_wordpress {
 	public $plugin_path = "";
 	public $editable_files = array(); //array with files which can be edited
 	public $skins = array();
-
+	
 	public static function getInstance() {
 		if (!isset(self::$instance)) {
 			$class = __CLASS__;
@@ -37,7 +37,7 @@ class ckeditor_wordpress {
 		);
 		$this->default_options = array(
 			'appearance' => array(
-				'skin' => 'moono',
+				'skin' => 'moono-lisa',
 				'uicolor' => 'default',
 				'uicolor_user' => '',
 				/* basic post settings */
@@ -327,6 +327,7 @@ class ckeditor_wordpress {
 	}
 
 	protected function get_skins(){
+		return ['moono-lisa'];
 		$skins_directory = $this->ckeditor_path . 'skins/';
 		if ( file_exists($skins_directory) && is_readable($skins_directory) ){
 			$dhandle = opendir($skins_directory);
@@ -1084,7 +1085,11 @@ class ckeditor_wordpress {
 }
 
 final class _WP_Editors {
+	
+	public static function enqueue_default_editor() {
 
+	}
+	
 	public static function editor_settings($editor_id, $set) {
 
 	}

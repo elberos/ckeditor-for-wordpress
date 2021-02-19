@@ -55,4 +55,14 @@ CKEDITOR.editorConfig = function(config) {
 	// mediaembed plugin
 	// config.extraPlugins += (config.extraPlugins ? ',mediaembed' : 'mediaembed' );
 	// CKEDITOR.plugins.addExternal('mediaembed', ckeditorSettings.pluginPath + 'plugins/mediaembed/');
+	
+	// code snippet plugin
+	config.removePlugins += (config.removePlugins ? ',' : '' ) + 'insertpre';
+	config.extraPlugins += (config.extraPlugins ? ',' : '' ) + 'youtube,codesnippet,mathjax';
+	config.mathJaxLib = '/wp-content/plugins/ckeditor-for-wordpress/ckeditor/plugins/MathJax-2.7.7/latest.js?config=TeX-AMS_HTML-full.js';
+	//config.mathJaxLib = '/wp-content/plugins/ckeditor-for-wordpress/ckeditor/plugins/mathjax/MathJax-2.7.7/latest.js?config=TeX-AMS_HTML';
+	//config.mathJaxLib = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML';
+	CKEDITOR.plugins.addExternal('youtube', ckeditorSettings.pluginPath + 'ckeditor/plugins/youtube/');
+	CKEDITOR.plugins.addExternal('codesnippet', ckeditorSettings.pluginPath + 'ckeditor/plugins/codesnippet/');
+    //config.codeSnippet_theme = 'vs';
 };
