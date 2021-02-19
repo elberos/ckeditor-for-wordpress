@@ -36,7 +36,9 @@ MathJax.Ajax.Preloading(
 );
 
 MathJax.Hub.Config({
-  extensions: ['[a11y]/accessibility-menu.js']
+  extensions: ['[a11y]/accessibility-menu.js'],
+  messageStyle: "none",
+  tex2jax: {preview: 'none'},
 });
 
 MathJax.InputJax.TeX=MathJax.InputJax({id:"TeX",version:"2.7.7",directory:MathJax.InputJax.directory+"/TeX",extensionDir:MathJax.InputJax.extensionDir+"/TeX",config:{TagSide:"right",TagIndent:"0.8em",MultLineWidth:"85%",equationNumbers:{autoNumber:"none",formatNumber:function(a){return a},formatTag:function(a){return"("+a+")"},formatID:function(a){return"mjx-eqn-"+String(a).replace(/\s/g,"_")},formatURL:function(b,a){return a+"#"+encodeURIComponent(b)},useLabelIds:true}},resetEquationNumbers:function(){}});MathJax.InputJax.TeX.Register("math/tex");MathJax.InputJax.TeX.loadComplete("config.js");

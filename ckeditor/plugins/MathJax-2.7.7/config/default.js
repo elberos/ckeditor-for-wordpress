@@ -163,7 +163,7 @@ MathJax.Hub.Config({
   //  "Loading..." and "Processing..." rather than showing the full file name and the
   //  percentage of the mathematics processed.
   //
-  messageStyle: "normal",
+  messageStyle: "none",
   
   //
   //  These two parameters control the alignment and shifting of displayed equations.
