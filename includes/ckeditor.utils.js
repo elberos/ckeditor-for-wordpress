@@ -210,6 +210,14 @@ jQuery(document).ready(function () {
 			}
 		}
 	}
+	
+	// Small editor
+	jQuery('.ckeditor-small').each(function(){
+		var conf = JSON.parse(JSON.stringify( ckeditorSettings.configuration ));
+		conf["customConfig"] = "/wp-content/plugins/ckeditor-for-wordpress/ckeditor.config.small.js";
+		CKEDITOR.replace(this, conf);
+	});
+	
 });
 function ckeditorOn(id) {
 	var instance;
