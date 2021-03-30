@@ -624,6 +624,7 @@ class ckeditor_wordpress {
 
 		$options = $this->options;
 		$settings = array();
+		/*
 		if ($options['upload']['browser'] == 'builtin') {
 			$ck_browser_url = $this->plugin_path . 'filemanager/browser/default/browser.html?Connector=../../connectors/php/connector.php';
 			$ck_upload_url = $this->plugin_path . 'filemanager/connectors/php/upload.php';
@@ -643,7 +644,23 @@ class ckeditor_wordpress {
 			$settings['filebrowserImageUploadUrl'] = $ck_upload_url . '&type=Images';
 			$settings['filebrowserFlashUploadUrl'] = $ck_upload_url . '&type=Flash';
 		}
-
+		*/
+		
+		/* Enable elFinder */
+		/*
+		$ck_browser_url = $this->plugin_path . 'elFinder/ckeditor.php';
+		$ck_upload_url = $this->plugin_path . 'elFinder/connector.php';
+		$settings['filebrowserBrowseUrl'] = $ck_browser_url;
+		$settings['filebrowserImageBrowseUrl'] = $ck_browser_url . '?type=Images';
+		$settings['filebrowserFlashBrowseUrl'] = $ck_browser_url . '?type=Flash';
+		*/
+		/*$settings['filebrowserUploadUrl'] = $ck_upload_url;
+		$settings['filebrowserImageUploadUrl'] = $ck_upload_url . '?type=Images';
+		$settings['filebrowserFlashUploadUrl'] = $ck_upload_url . '?type=Flash';
+		*/
+		
+		$settings['filebrowserImageBrowseUrl'] = $this->plugin_path . '/wpuploader.php';
+		
 		if ($options['appearance']['uicolor'] == 'custom' && !empty($options['appearance']['uicolor_user'])) {
 			$settings['uiColor'] = $options['appearance']['uicolor_user'];
 		}
@@ -840,7 +857,7 @@ class ckeditor_wordpress {
 	}
 
 	public function ckeditor_wpgallery_plugin($plugins) {
-		$plugins['wpgallery'] = $this->plugin_path . 'plugins/wpgallery/';
+		//$plugins['wpgallery'] = $this->plugin_path . 'plugins/wpgallery/';
 		return $plugins;
 	}
 

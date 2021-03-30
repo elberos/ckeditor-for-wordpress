@@ -57,7 +57,7 @@ CKEDITOR.editorConfig = function(config) {
 	// CKEDITOR.plugins.addExternal('mediaembed', ckeditorSettings.pluginPath + 'plugins/mediaembed/');
 	
 	// code snippet plugin
-	config.removePlugins += (config.removePlugins ? ',' : '' ) + 'insertpre';
+	config.removePlugins += (config.removePlugins ? ',' : '' ) + 'insertpre,scayt';
 	config.extraPlugins += (config.extraPlugins ? ',' : '' ) + 'youtube,codesnippet,mathjax';
 	config.mathJaxLib = '/wp-content/plugins/ckeditor-for-wordpress/ckeditor/plugins/MathJax-2.7.7/latest.js?config=TeX-AMS_HTML-full.js';
 	//config.mathJaxLib = '/wp-content/plugins/ckeditor-for-wordpress/ckeditor/plugins/mathjax/MathJax-2.7.7/latest.js?config=TeX-AMS_HTML';
