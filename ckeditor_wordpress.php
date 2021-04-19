@@ -50,4 +50,17 @@ function ckeditor_init(){
 	/** temporary for gd-star-rating **/
 	add_filter( 'ckeditor_external_plugins', array(&$ckeditor_wordpress, 'starrating_external_plugin') );
 	add_filter( 'ckeditor_buttons', array(&$ckeditor_wordpress, 'starrating_buttons') );
+	
+	/* Remove plugin updates */
+	add_filter( 'site_transient_update_plugins', 'ckeditor_filter_plugin_updates' );
+}
+
+function ckeditor_filter_plugin_updates($value)
+{
+	$name = plugin_basename(__FILE__);
+	if (isset($value->response[$name]))
+	{
+		unset($value->response[$name]);
+	}
+	return $value;
 }
